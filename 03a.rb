@@ -41,20 +41,6 @@ end
 
 
 gammadigs, epsilondigs = getgam(allbins)
-# get gamma and epsilon score
-# gammadigs = ""
-# epsilondigs = ""
-# for i in 0..(digits - 1)
-#   gsum = 0
-#   for binum in allbins
-#     gsum = gsum + binum[i].to_i
-#   end
-#   # add majority digit to string for gamma, minority for epsilon
-#   epsilondigs = epsilondigs + (allbins.length/gsum - 1).to_s
-#   gammadigs = gammadigs + (-(allbins.length/gsum - 2)).to_s
-# end
-
-
 
 # power score
 
@@ -62,10 +48,6 @@ puts gammadigs.to_i(2) * epsilondigs.to_i(2)
 puts "gamma: #{gammadigs}"
 
 # part b:
-
-# lsr = ogr * csr
-# start w scores:
-# puts allbins.inspect
 
 i = 0
 ogr = []
@@ -80,10 +62,7 @@ end
 
 for i in 0..(digits-1)
   j = 0
-  # puts "digit #{i}"
-  # puts ogr.inspect
   currbest = getgam(ogr)[0]
-  # puts currbest
 
 
   while (ogr.length() > 1) and (j < ogr.length())
@@ -97,10 +76,7 @@ puts ogr.inspect
 
 for i in 0..(digits-1)
   j = 0
-  # puts "digit #{i}"
-  # puts csr.inspect
   currbest = getgam(csr)[0]
-  # puts currbest
 
   while (csr.length() > 1) and (j < ogr.length())
     if csr[j][i] = currbest[i]
