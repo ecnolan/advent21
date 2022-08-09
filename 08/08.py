@@ -62,7 +62,7 @@ def create_key(clues):
     return key
 
 def alphebatize(list):
-    print(list)
+    # print(list)
     for index in range(len(list)):
         str = list[index]
         str_list = sorted(str)
@@ -82,13 +82,13 @@ def decipher(puzzle, key):
 
 
 def nums_in_line(line):
-    print(line)
+    # print(line)
     list = line.split()
     list = alphebatize(list)
     (clues, puzzle) = (list[:10], list[11:])
-    print("clues:", clues)
-    print("puzzle:", puzzle)
-    print()
+    # print("clues:", clues)
+    # print("puzzle:", puzzle)
+    # print()
     # create key for first four numbers
     key = create_key(clues)
     # get rest of numbers
@@ -108,19 +108,16 @@ def main():
     total = 0
     for line in lines:
         nums = nums_in_line(line)
-        print(nums)
+        # print(nums)
         for num in nums:
             if num == 1 or num == 4 or num == 7 or num == 8:
                 solution += 1
-        print(solution)
+        # print("sum of 1s, 4s, 7s, and 8s: ", solution)
         value = convert(nums)
         total += value
         count += 1
-    print(total)
-
-        # if count >= 8:
-        #     return
-
+    print("sum of 1s, 4s, 7s, and 8s: ", solution)
+    print("sum of all values:", total)
 
 
 main()
